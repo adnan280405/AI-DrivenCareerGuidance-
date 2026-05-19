@@ -1,0 +1,441 @@
+/* ========================================
+   MODERN RESUME ANALYZER STYLES
+   ======================================== */
+
+.resume-analyzer-modern {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--emerald-50) 0%, var(--cyan-50) 100%);
+  padding: 100px var(--space-lg) var(--space-3xl);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.analyzer-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  animation: slideUp 0.5s ease-out;
+}
+
+.analyzer-header h1 {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+}
+
+.analyzer-header p {
+  font-size: 1.0625rem;
+  color: var(--slate-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.analyzer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   UPLOAD CARD
+   ======================================== */
+
+.upload-card {
+  animation: slideUp 0.5s ease-out 0.1s both;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.upload-area {
+  position: relative;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-3xl) var(--space-xl);
+  border: 2px dashed var(--emerald-300);
+  border-radius: var(--radius-lg);
+  background: var(--emerald-50);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.file-label:hover {
+  border-color: var(--emerald-500);
+  background: var(--emerald-100);
+  transform: scale(1.02);
+}
+
+.file-label:active {
+  transform: scale(0.98);
+}
+
+.file-upload-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.file-label h3 {
+  color: var(--slate-900);
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.file-label p {
+  color: var(--slate-600);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.file-formats {
+  display: block;
+  color: var(--slate-500);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: var(--space-sm);
+}
+
+/* ========================================
+   FILE SELECTED
+   ======================================== */
+
+.file-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--emerald-50);
+  border: 2px solid var(--emerald-300);
+  border-radius: var(--radius-md);
+  animation: slideUp 0.3s ease-out;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex: 1;
+}
+
+.file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--emerald-500);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.file-name {
+  color: var(--slate-900);
+  font-weight: 600;
+  margin: 0;
+  word-break: break-all;
+}
+
+.file-size {
+  color: var(--slate-500);
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+
+.file-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--slate-600);
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.file-remove:hover {
+  background: white;
+  color: #dc2626;
+}
+
+/* ========================================
+   ERROR MESSAGE
+   ======================================== */
+
+.analysis-error {
+  padding: var(--space-lg);
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid #dc2626;
+  border-radius: var(--radius-md);
+  color: #dc2626;
+}
+
+.analysis-error p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ========================================
+   ANALYZE BUTTON
+   ======================================== */
+
+.analyze-btn {
+  width: 100%;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: 1rem;
+}
+
+/* ========================================
+   RESULTS CONTAINER
+   ======================================== */
+
+.results-container {
+  animation: slideUp 0.5s ease-out;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+  gap: var(--space-lg);
+}
+
+.results-header h2 {
+  margin: 0;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.back-btn {
+  white-space: nowrap;
+}
+
+/* ========================================
+   RESULT CARDS
+   ======================================== */
+
+.result-card {
+  animation: slideUp 0.5s ease-out;
+  margin-bottom: var(--space-xl);
+}
+
+.result-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.result-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.result-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ATS Card */
+.ats-card {
+  background: linear-gradient(135deg, var(--emerald-50) 0%, var(--cyan-50) 100%);
+  border: 2px solid var(--emerald-300);
+}
+
+.ats-score-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.score-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
+  flex-shrink: 0;
+}
+
+.score-value {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.score-info h3 {
+  color: var(--slate-900);
+  margin: 0 0 var(--space-sm);
+}
+
+.score-info p {
+  color: var(--slate-600);
+  margin: 0;
+}
+
+/* ========================================
+   RESULT TITLE
+   ======================================== */
+
+.result-title {
+  color: var(--slate-900);
+  margin: 0 0 var(--space-lg);
+  font-size: 1.125rem;
+}
+
+/* ========================================
+   SUGGESTIONS LIST
+   ======================================== */
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.suggestions-list li {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding: var(--space-lg);
+  background: var(--slate-50);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--emerald-500);
+}
+
+.suggestion-bullet {
+  color: var(--emerald-500);
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.suggestions-list li span:last-child {
+  color: var(--slate-700);
+  line-height: 1.6;
+}
+
+/* ========================================
+   KEYWORDS GRID
+   ======================================== */
+
+.keywords-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.keywords-grid .badge {
+  padding: 8px 16px;
+}
+
+/* ========================================
+   RESULTS FOOTER
+   ======================================== */
+
+.results-footer {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--slate-200);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .resume-analyzer-modern {
+    padding: 90px var(--space-md) var(--space-2xl);
+  }
+
+  .analyzer-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .file-label {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .ats-score-display {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+
+  .suggestions-list li {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .file-label {
+    padding: var(--space-xl) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .file-label h3 {
+    font-size: 1.05rem;
+  }
+
+  .file-label p {
+    font-size: 0.9rem;
+  }
+
+  .file-upload-icon {
+    font-size: 2rem;
+  }
+
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .score-value {
+    font-size: 2rem;
+  }
+}
+

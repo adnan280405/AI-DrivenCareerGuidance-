@@ -1,0 +1,27 @@
+@import './styles/design-tokens.css';
+@import './styles/global.css';
+@import './styles/navbar-new.css';
+@import './styles/landing.css';
+@import './styles/home-new.css';
+@import './styles/skill-gap-new.css';
+@import './styles/interview-prep-new.css';
+@import './styles/chat-new.css';
+@import './styles/resume-new.css';
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .app {
+    min-height: 100vh;
+  }
+}

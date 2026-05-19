@@ -1,0 +1,73 @@
+const API_HEADERS = {
+  "Content-Type": "application/json"
+};
+
+async function handleResponse(response, defaultErrorMessage) {
+  if (!response.ok) {
+    let message = defaultErrorMessage;
+    try {
+      const errorBody = await response.json();
+      message = errorBody?.message || message;
+    } catch {
+      message = defaultErrorMessage;
+    }
+    throw new Error(message);
+  }
+
+  return response.json();
+}
+
+export async function sendChatMessage(message) {
+  console.log(JSON.stringify({ message }));
+  const response = await fetch("http://localhost:8080/api/chat", {
+    method: "POST",
+    headers: API_HEADERS,
+    body: JSON.stringify({ message })
+  });
+  console.log(response);
+  return handleResponse(response, "Unable to get AI response.");
+}
+
+export async function analyzeResume(file) {
+
+  const formData = new FormData();
+
+  formData.append("resume", file);
+
+  const response = await fetch(
+    "http://localhost:8080/api/resume/analyze",
+    {
+      method: "POST",
+      body: formData
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Resume analysis failed.");
+  }
+
+  // IMPORTANT
+  return await response.json();
+}
+
+export async function getInterviewQuestions(role) {
+  const query = new URLSearchParams({ role });
+  const response = await fetch(`http://localhost:8080/api/interview?${query.toString()}`, {
+    method: "GET"
+  });
+
+  return handleResponse(response, "Unable to generate interview questions.");
+}
+
+export async function analyzeSkillGap(targetRole, currentSkills) {
+  const response = await fetch("/api/skill-gap", {
+    method: "POST",
+    headers: API_HEADERS,
+    body: JSON.stringify({
+      targetRole,
+      currentSkills
+    })
+  });
+
+  return handleResponse(response, "Skill gap analysis failed.");
+}

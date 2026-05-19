@@ -1,0 +1,464 @@
+/* ========================================
+   MODERN INTERVIEW PREP STYLES
+   ======================================== */
+
+.interview-prep-modern {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--sky-50) 0%, var(--emerald-50) 100%);
+  padding: 100px var(--space-lg) var(--space-3xl);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.interview-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  animation: slideUp 0.5s ease-out;
+}
+
+.interview-header h1 {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.interview-header p {
+  font-size: 1.0625rem;
+  color: var(--slate-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.interview-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   SETUP CARD
+   ======================================== */
+
+.setup-card {
+  animation: slideUp 0.5s ease-out 0.1s both;
+}
+
+.setup-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.setup-content h2 {
+  color: var(--slate-900);
+  margin: 0;
+}
+
+.setup-content p {
+  color: var(--slate-600);
+  margin: 0;
+}
+
+/* ========================================
+   ROLES GRID
+   ======================================== */
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.role-button {
+  padding: var(--space-lg);
+  border: 2px solid var(--slate-200);
+  background: white;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--slate-700);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--emerald-50);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.role-button:hover {
+  border-color: var(--emerald-300);
+  color: var(--emerald-600);
+  transform: translateY(-2px);
+}
+
+.role-button:hover::before {
+  left: 0;
+}
+
+.role-button.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--emerald-600);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+}
+
+.role-button.active::before {
+  left: 0;
+}
+
+/* ========================================
+   ERROR MESSAGE
+   ======================================== */
+
+.setup-error {
+  padding: var(--space-lg);
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid #dc2626;
+  border-radius: var(--radius-md);
+  color: #dc2626;
+}
+
+.setup-error p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ========================================
+   GENERATE BUTTON
+   ======================================== */
+
+.generate-btn {
+  width: 100%;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+/* ========================================
+   QUESTIONS SECTION
+   ======================================== */
+
+.questions-section {
+  animation: slideUp 0.5s ease-out 0.2s both;
+  margin-top: var(--space-2xl);
+}
+
+.questions-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.questions-header h2 {
+  color: var(--slate-900);
+  margin: 0;
+  flex: 1;
+}
+
+.questions-header span {
+  color: var(--emerald-600);
+  font-weight: 700;
+}
+
+.questions-header .badge {
+  white-space: nowrap;
+}
+
+/* ========================================
+   INTERVIEW ACCORDION
+   ======================================== */
+
+.interview-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: slideUp 0.5s ease-out 0.3s both;
+}
+
+.accordion-item {
+  border: 2px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  background: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item.expanded {
+  border-color: var(--emerald-500);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.15);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-weight: 600;
+  color: var(--slate-900);
+}
+
+.accordion-header:hover {
+  background: var(--emerald-50);
+}
+
+.accordion-item.expanded .accordion-header {
+  background: linear-gradient(135deg, var(--emerald-50) 0%, var(--cyan-50) 100%);
+  border-bottom: 2px solid var(--emerald-200);
+}
+
+.accordion-question {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  flex: 1;
+}
+
+.question-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.question-text {
+  line-height: 1.5;
+  color: var(--slate-900);
+}
+
+.accordion-icon {
+  color: var(--emerald-600);
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.expanded .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   ACCORDION CONTENT
+   ======================================== */
+
+.accordion-content {
+  padding: var(--space-lg);
+  background: var(--slate-50);
+  border-top: 2px solid var(--slate-200);
+  animation: slideDown 0.3s ease-out;
+}
+
+.answer-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.answer-box h4 {
+  color: var(--emerald-600);
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.answer-box p {
+  color: var(--slate-700);
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* ========================================
+   QUESTIONS FOOTER
+   ======================================== */
+
+.questions-footer {
+  margin-top: var(--space-2xl);
+  padding: var(--space-lg);
+  background: var(--emerald-50);
+  border-left: 4px solid var(--emerald-500);
+  border-radius: var(--radius-md);
+}
+
+.questions-footer p {
+  margin: 0;
+  color: var(--slate-700);
+  font-weight: 500;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.empty-card {
+  animation: slideUp 0.5s ease-out 0.2s both;
+  margin-top: var(--space-2xl);
+}
+
+.empty-state-interview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.empty-state-interview h3 {
+  color: var(--slate-900);
+  margin: 0;
+}
+
+.empty-state-interview p {
+  color: var(--slate-600);
+  margin: 0;
+  max-width: 400px;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.loading-card {
+  animation: slideUp 0.5s ease-out 0.2s both;
+  margin-top: var(--space-2xl);
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+}
+
+.loading-state p {
+  color: var(--slate-600);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .interview-prep-modern {
+    padding: 90px var(--space-md) var(--space-2xl);
+  }
+
+  .roles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .role-button {
+    padding: var(--space-md);
+    font-size: 0.9rem;
+  }
+
+  .questions-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .questions-header h2 {
+    width: 100%;
+  }
+
+  .accordion-header {
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .accordion-question {
+    gap: var(--space-md);
+  }
+
+  .question-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .question-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-button {
+    padding: var(--space-md);
+  }
+
+  .accordion-header {
+    padding: var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accordion-question {
+    width: 100%;
+    order: -1;
+  }
+
+  .accordion-icon {
+    align-self: flex-end;
+    margin-top: -28px;
+  }
+
+  .accordion-item.expanded .accordion-icon {
+    margin-top: 0;
+  }
+
+  .empty-icon {
+    font-size: 2rem;
+  }
+}
+
