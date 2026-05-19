@@ -19,7 +19,7 @@ async function handleResponse(response, defaultErrorMessage) {
 
 export async function sendChatMessage(message) {
   console.log(JSON.stringify({ message }));
-  const response = await fetch("http://localhost:8080/api/chat", {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
     method: "POST",
     headers: API_HEADERS,
     body: JSON.stringify({ message })
@@ -34,8 +34,7 @@ export async function analyzeResume(file) {
 
   formData.append("resume", file);
 
-  const response = await fetch(
-    "http://localhost:8080/api/resume/analyze",
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resume/analyze`,
     {
       method: "POST",
       body: formData
@@ -51,7 +50,7 @@ export async function analyzeResume(file) {
 
 export async function getInterviewQuestions(role) {
   const query = new URLSearchParams({ role });
-  const response = await fetch(`http://localhost:8080/api/interview?${query.toString()}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/interview?${query.toString()}`, {
     method: "GET"
   });
 
@@ -66,7 +65,7 @@ export async function analyzeSkillGap(targetRole, currentSkills) {
         .map((skill) => skill.trim())
         .filter(Boolean);
 
-  const response = await fetch("http://localhost:8080/api/skill-gap", {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/skill-gap`, {
     method: "POST",
     headers: API_HEADERS,
     body: JSON.stringify({
