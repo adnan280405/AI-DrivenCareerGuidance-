@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/interview")
-@CrossOrigin("*")
+@CrossOrigin("https://pathiq-theta.vercel.app")
 public class InterviewPrepController {
 
     private final InterviewPrepService interviewPrepService;

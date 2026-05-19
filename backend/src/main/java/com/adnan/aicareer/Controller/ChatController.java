@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/chat")
-@CrossOrigin("*")
+@CrossOrigin("https://pathiq-theta.vercel.app")
 public class ChatController {
 
     private final ChatService chatService;

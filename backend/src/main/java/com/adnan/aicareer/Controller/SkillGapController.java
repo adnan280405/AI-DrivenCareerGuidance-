@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/skill-gap")
-@CrossOrigin("*")
+@CrossOrigin("https://pathiq-theta.vercel.app")
 public class SkillGapController {
 
      private final SkillGapService skillGapService;

@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/resume/analyze")
-@CrossOrigin("*")
+@CrossOrigin("https://pathiq-theta.vercel.app")
 public class ResumeAnalysisController {
 
     private final ResumeService resumeService;
