@@ -1,13 +1,4 @@
 target/
 .env
-.env.local
-.env.*.local
 .idea/
 *.iml
-src/main/resources/application.properties
-.DS_Store
-*.log
-*.class
-/build/
-.gradle/
-.mvn/

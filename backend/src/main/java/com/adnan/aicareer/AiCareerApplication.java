@@ -8,7 +8,7 @@ public class AiCareerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AiCareerApplication.class, args);
-
     }
 
 }
+
