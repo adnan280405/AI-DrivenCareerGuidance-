@@ -102,18 +102,33 @@ export default function Navbar() {
   }
 
   function handleAboutClick(event) {
+    event.preventDefault();
+    // Close mobile menu
+    setMobileOpen(false);
+    
+    // If already on home page, just scroll to about
     if (location.pathname === '/home') {
-      event.preventDefault();
-      const aboutSection = document.getElementById('about');
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      if (window.location.hash !== '#about') {
-        window.history.replaceState(null, '', '/home#about');
-      }
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (window.location.hash !== '#about') {
+          window.history.replaceState(null, '', '/home#about');
+        }
+      }, 100);
     } else {
-      event.preventDefault();
-      navigate('/home#about');
+      // Navigate to home first, then scroll to about
+      navigate('/home');
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (window.location.hash !== '#about') {
+          window.history.replaceState(null, '', '/home#about');
+        }
+      }, 500);
     }
   }
 
