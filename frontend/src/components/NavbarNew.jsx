@@ -70,6 +70,19 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    // Lock body scroll when mobile menu is open
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileOpen]);
+
   function handleHomeClick(event) {
     if (location.pathname === '/home') {
       event.preventDefault();
