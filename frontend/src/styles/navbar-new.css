@@ -211,7 +211,7 @@
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.95);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -228,7 +228,7 @@
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, rgba(6,6,6,0.98), rgba(12,12,12,0.99));
+  background: linear-gradient(180deg, rgba(6,6,6,1), rgba(12,12,12,1));
   backdrop-filter: blur(8px);
   padding: 90px 24px 60px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
