@@ -6,6 +6,7 @@
   top: 0;
   z-index: 100;
   transition: all var(--speed-normal) ease;
+  overflow: visible;
 }
 
 .navbar-content {
@@ -200,23 +201,28 @@
 .navbar-toggle.open .hamburger::before { transform: rotate(45deg); top: 0; }
 .navbar-toggle.open .hamburger::after { transform: rotate(-45deg); bottom: 0; }
 
-/* mobile menu overlay */
+/* mobile menu overlay - breaks out of stacking context */
 .mobile-menu {
   display: none;
   position: fixed;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.7);
-  z-index: 105;
+  z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
+  overflow: hidden;
 }
 .mobile-menu.open {
   display: block;
   opacity: 1;
   visibility: visible;
+  overflow: visible;
 }
 .mobile-menu-inner {
   width: 100%;
@@ -238,6 +244,8 @@
   gap: 4px;
   margin-bottom: var(--spacing-4);
 }
+
+/* Ensure mobile menu items are properly visible */
 .mobile-nav-link {
   color: var(--color-text-secondary);
   font-size: var(--font-size-base);
@@ -271,6 +279,11 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    position: static;
+    z-index: auto;
+  }
+
   /* Hide entire navbar content on mobile - show only hamburger */
   .navbar-content {
     height: 70px;
@@ -304,7 +317,7 @@
   .navbar-toggle {
     display: inline-flex !important;
     position: relative;
-    z-index: 110;
+    z-index: 10000;
     width: 56px;
     height: 56px;
     margin: var(--spacing-4);
