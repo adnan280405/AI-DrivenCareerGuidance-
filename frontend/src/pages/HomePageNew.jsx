@@ -51,8 +51,8 @@ export default function HomePageNew() {
             Analyze skill gaps, prepare for interviews, and accelerate your career growth with PathIQ's AI-driven insights and personalized learning roadmaps.
           </p>
           <div className="home-hero-cta">
-            <Link className="btn btn-primary btn-lg" to="/skill-gap">
-              Start Analysis
+            <Link className="btn btn-primary btn-lg" to="/chat">
+              Start Chat
             </Link>
           </div>
         </div>
