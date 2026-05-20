@@ -177,3 +177,32 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .interview-prep-page {
+    padding: var(--spacing-4) var(--spacing-2);
+  }
+
+  .interview-form {
+    width: 100%;
+    padding: var(--spacing-4);
+  }
+
+  .question-card {
+    padding: var(--spacing-4);
+  }
+
+  .question-header {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .question-text {
+    font-size: var(--font-size-base);
+  }
+
+  .question-body {
+    gap: var(--spacing-3);
+  }
+}
+

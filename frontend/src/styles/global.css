@@ -234,6 +234,7 @@ select {
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   padding: var(--spacing-3) var(--spacing-4);
+  min-height: 44px;
   transition: all var(--speed-normal) ease;
   outline: none;
   font-family: inherit;
@@ -402,3 +403,31 @@ textarea {
     display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .page-wrap {
+    padding: var(--spacing-4) var(--spacing-2) var(--spacing-8);
+  }
+
+  .card {
+    padding: var(--spacing-4);
+  }
+
+  .card-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .btn-sm {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--font-size-xs);
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-page {
+    gap: var(--spacing-8);
+  }
+}
+

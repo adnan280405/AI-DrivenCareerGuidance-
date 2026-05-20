@@ -193,3 +193,35 @@
   }
 }
 
+  @media (max-width: 480px) {
+    .skill-gap-page {
+      padding: var(--spacing-4) var(--spacing-2);
+    }
+
+    .skill-gap-form {
+      width: 100%;
+      padding: var(--spacing-4);
+    }
+
+    .form-section {
+      gap: var(--spacing-4);
+    }
+
+    .input-row {
+      gap: var(--spacing-3);
+    }
+
+    .input-row.inline {
+      grid-template-columns: 1fr;
+    }
+
+    .gap-result-card {
+      padding: var(--spacing-4);
+    }
+
+    .skill-badge {
+      font-size: var(--font-size-xs);
+      padding: var(--spacing-1) var(--spacing-2);
+    }
+  }
+

@@ -402,3 +402,50 @@
     gap: var(--spacing-2);
   }
 }
+
+@media (max-width: 480px) {
+  .home-hero {
+    padding: var(--spacing-6) var(--spacing-3);
+  }
+
+  .home-hero h1 {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+
+  .hero-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .home-hero p {
+    font-size: var(--font-size-base);
+  }
+
+  .home-features {
+    padding: var(--spacing-6) var(--spacing-3);
+  }
+
+  .feature-card {
+    padding: var(--spacing-4);
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .home-about-section {
+    padding: var(--spacing-6) var(--spacing-3);
+    margin: var(--spacing-6) var(--spacing-3);
+  }
+
+  .about-card {
+    padding: var(--spacing-4);
+  }
+
+  .developer-chip {
+    padding: 8px 16px;
+    font-size: var(--font-size-xs);
+  }
+}

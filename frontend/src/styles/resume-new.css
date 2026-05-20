@@ -212,3 +212,43 @@
   }
 }
 
+  @media (max-width: 480px) {
+    .resume-page {
+      padding: var(--spacing-4) var(--spacing-2);
+    }
+
+    .resume-intro h2 {
+      font-size: var(--font-size-xl);
+    }
+
+    .resume-upload-zone {
+      padding: var(--spacing-6) var(--spacing-3);
+      margin: var(--spacing-4) var(--spacing-2);
+    }
+
+    .upload-icon {
+      font-size: 32px;
+    }
+
+    .resume-results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .resume-analysis-card {
+      padding: var(--spacing-4);
+    }
+
+    .analysis-value {
+      font-size: var(--font-size-lg);
+    }
+
+    .resume-recommendations {
+      padding: var(--spacing-4);
+    }
+
+    .recommendation-item {
+      flex-direction: column;
+      gap: var(--spacing-2);
+    }
+  }
+

@@ -399,23 +399,55 @@
   );
 }
 
-/* ─── Mobile ─────────────────────────────────────────────── */
+/* ─── Mobile ─────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .landing-hero {
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0 16px 36px;
-  }
-  .landing-glass-panel {
-    width: 100%;
-    padding: 30px 22px;
-  }
-  .landing-robot {
-    width: 100%;
-    right: 0;
-    opacity: 0.12;
-    z-index: 0;
-  }
-  .landing-separator { display: none; }
-  .landing-title { font-size: 1.9rem; }
-}
+   .landing-hero {
+     align-items: flex-end;
+     justify-content: center;
+     padding: 0 16px 36px;
+   }
+   .landing-glass-panel {
+     width: 100%;
+     padding: 30px 22px;
+   }
+   .landing-robot {
+     width: 100%;
+     right: 0;
+     opacity: 0.12;
+     z-index: 0;
+   }
+   .landing-separator { display: none; }
+   .landing-title { font-size: 1.9rem; }
+ }
+
+/* ─── Very Small Screens (480px) ────────────────────── */
+@media (max-width: 480px) {
+   .landing-hero {
+     padding: 0 12px 24px;
+   }
+   .landing-glass-panel {
+     padding: 24px 16px;
+     border-radius: 16px;
+   }
+   .landing-logo {
+     width: 40px;
+     height: 40px;
+   }
+   .landing-logo-wordmark {
+     font-size: 1.4rem;
+   }
+   .landing-badge {
+     font-size: 0.6rem;
+     padding: 4px 10px;
+   }
+   .landing-title {
+     font-size: clamp(1.4rem, 5vw, 1.8rem);
+   }
+   .landing-subtitle {
+     font-size: 0.8rem;
+   }
+   .landing-cta {
+     font-size: 0.85rem;
+     padding: 11px 24px;
+   }
+ }

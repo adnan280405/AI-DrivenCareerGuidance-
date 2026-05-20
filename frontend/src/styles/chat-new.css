@@ -13,7 +13,7 @@
 
 .chat-header h2 {
   margin: 0;
-  font-size: 60px;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
 }
@@ -148,6 +148,40 @@
 
   .chat-input-area {
     padding: var(--spacing-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-page {
+    padding: var(--spacing-2);
+    gap: var(--spacing-2);
+  }
+
+  .chat-header h2 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  .chat-header p {
+    font-size: var(--font-size-sm);
+  }
+
+  .chat-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .chat-log {
+    padding: var(--spacing-3);
+    gap: var(--spacing-3);
+  }
+
+  .message-bubble {
+    max-width: 95%;
+    padding: var(--spacing-3);
+  }
+
+  .chat-input-field {
+    min-height: 40px !important;
   }
 }
 

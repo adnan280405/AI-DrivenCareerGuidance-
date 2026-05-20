@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../src/assets/images/logo.png';
 import '../styles/navbar-new.css';
@@ -60,9 +60,15 @@ function SocialIcon({ type }) {
 }
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
+
+  useEffect(() => {
+    // close mobile menu on route change
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   function handleHomeClick(event) {
     if (location.pathname === '/home') {
@@ -136,6 +142,61 @@ export default function Navbar() {
               Contact Us
             </button>
             <div className="contact-menu" role="menu" aria-label="Social platforms">
+              {CONTACT_ITEMS.map((item) => (
+                <a
+                  key={item.label}
+                  className={`contact-icon ${item.type}`}
+                  href={item.href}
+                  target={item.label === 'Email' ? undefined : '_blank'}
+                  rel={item.label === 'Email' ? undefined : 'noreferrer'}
+                  aria-label={item.label}
+                  title={item.label}
+                >
+                  <SocialIcon type={item.type} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* hamburger for mobile */}
+        <button
+          className={`navbar-toggle ${mobileOpen ? 'open' : ''}`}
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setMobileOpen((s) => !s)}
+        >
+          <span className="hamburger"></span>
+        </button>
+      </div>
+
+      {/* mobile menu overlay */}
+      <div
+        className={`mobile-menu ${mobileOpen ? 'open' : ''}`}
+        role="dialog"
+        aria-hidden={!mobileOpen}
+        onClick={(e) => {
+          // close when clicking backdrop
+          if (e.target === e.currentTarget) setMobileOpen(false);
+        }}
+      >
+        <div className="mobile-menu-inner">
+          <div className="mobile-nav">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={item.path === '/home' ? handleHomeClick : undefined}
+                className={`mobile-nav-link ${currentPath === item.path ? 'active' : ''}`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className="mobile-actions">
+            <Link className="btn btn-secondary btn-sm" to="/home#about" onClick={handleAboutClick}>
+              About
+            </Link>
+            <div className="mobile-contacts">
               {CONTACT_ITEMS.map((item) => (
                 <a
                   key={item.label}
