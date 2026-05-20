@@ -230,13 +230,14 @@
   min-height: 100vh;
   background: linear-gradient(180deg, rgba(6,6,6,0.98), rgba(12,12,12,0.99));
   backdrop-filter: blur(8px);
-  padding: 80px 24px 32px;
+  padding: 80px 24px 40px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--spacing-8);
   box-sizing: border-box;
+  justify-content: flex-start;
 }
 .mobile-nav {
   display: flex;
@@ -261,7 +262,6 @@
   background: rgba(255,255,255,0.08);
 }
 .mobile-actions {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -276,6 +276,22 @@
 }
 .mobile-actions .btn {
   width: 100%;
+}
+
+.mobile-actions .btn-secondary {
+  padding: 12px 16px;
+  font-size: var(--font-size-sm);
+}
+
+.mobile-contacts .contact-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.mobile-contacts .contact-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 @media (max-width: 768px) {
